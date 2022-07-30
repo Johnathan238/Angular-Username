@@ -7,46 +7,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputFieldComponent implements OnInit {
 
-  userName: string = ''
-  userId: number = 0
-  userStatus: string = 'offline'
+  userName = ''
+  userId  = 0
+  userStatus = 'offline'
 
-
-  allowNewUser = false
-  // userCreationStatus = "No user was created!"
-  // serverName = ''
+  userCreationStatus = "No user was created!"
 
   updateUserName() {
     this.userName
-    // this.userId
   }
 
-    // onCreateUser() {
-  //   this.serverCreationStatus = 'Server was created'
-  // }
+  onCreateUser() {
+    setTimeout(() => {
+      this.userCreationStatus = `${this.userName} was added !`
+      console.log(this.userName);
+    }, 1000)
+  }
 
+  onUpdateUserName(event: any) {
+    this.userName = event.target.value
+  }
 
+  handleClear(event: any){
+  event.preventDefault();
 
-  // constructor() {
+      this.userName = ''
+      console.log(this.userName);
+  }
+
+  // handleClear(){
   //   setTimeout(() => {
-  //     this.allowNewServer = true
-  //   }, 2000)
-  //  }
-
-  // ngOnInit(): void {
+  //     this.userName = ''
+  //     console.log(this.userName);
+  //   }, 4000)
   // }
 
-  // onCreateServer() {
-  //   this.serverCreationStatus = 'Server was created'
-  // }
-
-  // onUpdateServerName(event: any) {
-  //   this.serverName = event.target.value
-  // }
-
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+
   }
 
 }

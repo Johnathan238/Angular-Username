@@ -1,29 +1,9 @@
 <label>Input UserName</label>
-<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)" /> -->
-<input type="text" class="form-control" placeholder="Ex. angulaer1234"  [(ngModel)]="userName">
-<button class="btn btn-primary" >
-  Add UserName Please !
+<input type="text" class="form-control" placeholder="Ex. angulaer1234"  [(ngModel)]="userName" required>
+<button class="btn btn-primary" [disabled]="!userName" (click)="onCreateUser()" (click)="handleClear($event)">
+  Add User-Name Please !
 </button>
-<hr />
 <p>{{ userName }}</p>
 <hr />
-<!-- <p>{{ serverCreationStatus }}</p> -->
+<p>{{ userCreationStatus }}</p>
 <hr />
-<!-- <p>{{ userName }} with ID {{ userId }} is {{ userStatus }}</p> -->
-<hr />
-<!-- <app-servers></app-servers> -->
-
-
-<!-- <label>Server Name</label> -->
-<!-- <input type="text" class="form-control" [(ngModel)]="serverName">
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
-  Add Server
-</button>
-<hr />
-<p>{{ serverName }}</p>
-<hr />
-<p>{{ serverCreationStatus }}</p>
-<hr />
-<p>Server with ID {{ serverId }} is {{ serverStatus }}</p>
-<hr />
-<app-servers></app-servers> -->
